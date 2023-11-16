@@ -16,6 +16,7 @@
 		5D5E686F2AFE257B00000750 /* KC_Marvel_SuperPowersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E686E2AFE257B00000750 /* KC_Marvel_SuperPowersTests.swift */; };
 		5D5E68792AFE257B00000750 /* KC_Marvel_SuperPowersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E68782AFE257B00000750 /* KC_Marvel_SuperPowersUITests.swift */; };
 		5D5E687B2AFE257B00000750 /* KC_Marvel_SuperPowersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E687A2AFE257B00000750 /* KC_Marvel_SuperPowersUITestsLaunchTests.swift */; };
+		5D6984A32B0624110021BABA /* MarvelCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984A22B0624110021BABA /* MarvelCharacters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		5D5E68742AFE257B00000750 /* KC-Marvel-SuperPowersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KC-Marvel-SuperPowersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5E68782AFE257B00000750 /* KC_Marvel_SuperPowersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KC_Marvel_SuperPowersUITests.swift; sourceTree = "<group>"; };
 		5D5E687A2AFE257B00000750 /* KC_Marvel_SuperPowersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KC_Marvel_SuperPowersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5D6984A22B0624110021BABA /* MarvelCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		5D5E68572AFE257A00000750 /* KC-Marvel-SuperPowers */ = {
 			isa = PBXGroup;
 			children = (
+				5D6984A12B0623B40021BABA /* Models */,
 				5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */,
 				5D5E685A2AFE257A00000750 /* ContentView.swift */,
 				5D5E685C2AFE257B00000750 /* Assets.xcassets */,
@@ -131,6 +134,14 @@
 				5D5E687A2AFE257B00000750 /* KC_Marvel_SuperPowersUITestsLaunchTests.swift */,
 			);
 			path = "KC-Marvel-SuperPowersUITests";
+			sourceTree = "<group>";
+		};
+		5D6984A12B0623B40021BABA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D6984A22B0624110021BABA /* MarvelCharacters.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 			files = (
 				5D5E68652AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld in Sources */,
 				5D5E68622AFE257B00000750 /* Persistence.swift in Sources */,
+				5D6984A32B0624110021BABA /* MarvelCharacters.swift in Sources */,
 				5D5E685B2AFE257A00000750 /* ContentView.swift in Sources */,
 				5D5E68592AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift in Sources */,
 			);
