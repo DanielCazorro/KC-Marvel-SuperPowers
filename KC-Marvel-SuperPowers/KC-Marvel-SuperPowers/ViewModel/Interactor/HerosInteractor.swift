@@ -14,12 +14,14 @@ protocol HerosInteractorProtocol: AnyObject {
 
 final class HerosInteractor: HerosInteractorProtocol {
     let networker: NetworkerProtocol
+    let baseNetwork: BaseNetwork
     
-    
-    func getHeros(filter: String) -> AnyPublisher<[MarvelCharacters], Error> {
-        <#code#>
+    init(networker: NetworkerProtocol = Networker(), baseNetwork: BaseNetwork = BaseNetwork()) {
+        self.networker = networker
+        self.baseNetwork = baseNetwork
     }
     
-    
-    
+    func getHeros(filter: String) -> AnyPublisher<[MarvelCharacters], Error> {
+        return networker.callServer(type: [MarvelCharacters].self, request: baseNetwork.getSessionHero(filter: filter))
+    }
 }

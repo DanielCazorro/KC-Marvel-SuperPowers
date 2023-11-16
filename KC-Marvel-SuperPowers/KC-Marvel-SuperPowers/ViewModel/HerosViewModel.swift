@@ -13,7 +13,13 @@ final class HerosViewModel: ObservableObject {
     @Published var status = Status.loading
     
     var suscriptors = Set<AnyCancellable>()
-
+    var interactor: HerosInteractorProtocol
+    
+    init(interactor: HerosInteractorProtocol = HerosInteractor()){
+        self.interactor = interactor
+        
+        
+    }
     
     
 }

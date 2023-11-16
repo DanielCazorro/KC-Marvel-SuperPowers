@@ -29,6 +29,7 @@
 		5D6984C32B063F490021BABA /* Constant_desa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C22B063F490021BABA /* Constant_desa.swift */; };
 		5D6984C62B0640490021BABA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C52B0640490021BABA /* KeyChain.swift */; };
 		5D6984C92B06405D0021BABA /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6984C82B06405D0021BABA /* KeychainSwift */; };
+		5D6984CB2B06478A0021BABA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984CA2B06478A0021BABA /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		5D6984C02B063E620021BABA /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		5D6984C22B063F490021BABA /* Constant_desa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant_desa.swift; sourceTree = "<group>"; };
 		5D6984C52B0640490021BABA /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		5D6984CA2B06478A0021BABA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				5D6984A62B06290B0021BABA /* RootView.swift */,
 				5D6984AD2B062D1C0021BABA /* MainView.swift */,
+				5D6984CA2B06478A0021BABA /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				5D5E68652AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld in Sources */,
 				5D6984AE2B062D1C0021BABA /* MainView.swift in Sources */,
 				5D6984AC2B062A480021BABA /* StatusModel.swift in Sources */,
+				5D6984CB2B06478A0021BABA /* LoadingView.swift in Sources */,
 				5D6984AA2B0629CD0021BABA /* RootViewModel.swift in Sources */,
 				5D6984C62B0640490021BABA /* KeyChain.swift in Sources */,
 				5D5E68622AFE257B00000750 /* Persistence.swift in Sources */,

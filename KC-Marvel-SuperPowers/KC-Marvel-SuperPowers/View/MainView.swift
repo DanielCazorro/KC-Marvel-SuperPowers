@@ -16,7 +16,7 @@ struct MainView: View {
         
         NavigationStack {
             List{
-                
+                // Aquí va la lista de Héroes: TODO: CREAR LISTA FALSA PRIMERO
             }
             .navigationTitle("Marvel Characters")
             .searchable(text: $filter,

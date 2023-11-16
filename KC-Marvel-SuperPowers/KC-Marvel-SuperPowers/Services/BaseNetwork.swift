@@ -17,12 +17,27 @@ struct HTTPMethods {
 }
 
 enum endpoints: String {
-
+    
     case herosList = "/v1/public/characters"
+    case comics = "v1/public/comics"
+    case creators = "v1/public/creators"
+    case events = "v1/public/events"
+    case series = "v1/public/series"
+    case stories = "v1/public/stories"
+    
+}
+
+// FIXME: Esto no debería ir aquí seguramente, pero lo dejamos hasta que funcione la app y ya lo movemos: NUNCA PONER CLAVES EN EL CÓDIGO!!!
+enum paramsKeys: String {
+    case apiKey = "c103d2622751066f8724a640dc83d26b"
+    case ts = "1"
+    case hash = "341fc6e22d3f05d92fece7a5ca724310"
+    
 }
 
 struct BaseNetwork {
     
+    //FIXME: Comprboar este código
     func getSessionHero(filter: String) -> URLRequest{
         let urlCad = "\(server)\(endpoints.herosList.rawValue)"
         

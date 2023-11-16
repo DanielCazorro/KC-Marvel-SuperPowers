@@ -15,14 +15,8 @@ struct RootView: View {
             
         case .loading:
             withAnimation{
-                Image(systemName: "clock.circle")
-                    .resizable()
-                    .frame(width: 250, height: 250)
+                LoadingView()
             }
-            Text("Loading")
-                .font(.title)
-                .bold()
-                .foregroundStyle(.orange)
             
         case .error(error: let errorString):
             withAnimation {
