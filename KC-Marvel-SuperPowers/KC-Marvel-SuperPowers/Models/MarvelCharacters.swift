@@ -17,6 +17,10 @@ struct MarvelCharacters: Codable {
     let data: DataClass
 }
 
+struct MarvelCharactersFilter: Codable {
+    var name: String
+}
+
 // MARK: - DataClass
 struct DataClass: Codable {
     let offset, limit, total, count: Int

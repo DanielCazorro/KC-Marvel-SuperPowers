@@ -13,7 +13,7 @@ protocol HerosInteractorProtocol: AnyObject {
 }
 
 final class HerosInteractor: HerosInteractorProtocol {
-    
+    let networker: NetworkerProtocol
     
     
     func getHeros(filter: String) -> AnyPublisher<[MarvelCharacters], Error> {
