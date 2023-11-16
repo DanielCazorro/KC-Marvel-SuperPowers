@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 final class RootViewModel: ObservableObject {
-    @Published var status = Status.log
+    @Published var status = Status.loading
 }

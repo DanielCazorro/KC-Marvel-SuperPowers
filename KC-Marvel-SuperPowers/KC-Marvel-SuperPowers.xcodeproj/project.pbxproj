@@ -20,6 +20,8 @@
 		5D6984A72B06290B0021BABA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984A62B06290B0021BABA /* RootView.swift */; };
 		5D6984AA2B0629CD0021BABA /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984A92B0629CD0021BABA /* RootViewModel.swift */; };
 		5D6984AC2B062A480021BABA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984AB2B062A480021BABA /* StatusModel.swift */; };
+		5D6984AE2B062D1C0021BABA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984AD2B062D1C0021BABA /* MainView.swift */; };
+		5D6984B12B062EB00021BABA /* HerosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984B02B062EB00021BABA /* HerosViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		5D6984A62B06290B0021BABA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5D6984A92B0629CD0021BABA /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5D6984AB2B062A480021BABA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
+		5D6984AD2B062D1C0021BABA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5D6984B02B062EB00021BABA /* HerosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5D6984A62B06290B0021BABA /* RootView.swift */,
+				5D6984AD2B062D1C0021BABA /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5D6984A92B0629CD0021BABA /* RootViewModel.swift */,
+				5D6984B02B062EB00021BABA /* HerosViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -307,7 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6984B12B062EB00021BABA /* HerosViewModel.swift in Sources */,
 				5D5E68652AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld in Sources */,
+				5D6984AE2B062D1C0021BABA /* MainView.swift in Sources */,
 				5D6984AC2B062A480021BABA /* StatusModel.swift in Sources */,
 				5D6984AA2B0629CD0021BABA /* RootViewModel.swift in Sources */,
 				5D5E68622AFE257B00000750 /* Persistence.swift in Sources */,

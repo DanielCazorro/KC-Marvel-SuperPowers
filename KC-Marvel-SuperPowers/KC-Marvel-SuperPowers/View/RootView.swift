@@ -12,11 +12,9 @@ struct RootView: View {
     
     var body: some View {
         switch rootViewModel.status{
-        case Status.log:
-            Text("TODO: LOG VIEW")
             
         case .loading:
-            Text("TODO: LOADING")
+            Text("TODO: LOADING -> Moving to loaded")
             
         case .error(error: let errorString):
             withAnimation {
@@ -33,4 +31,5 @@ struct RootView: View {
 
 #Preview {
     RootView()
+        .environmentObject(RootViewModel())
 }
