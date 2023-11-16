@@ -5,10 +5,9 @@
 //  Created by Daniel Cazorro Frías on 16/11/23.
 //
 
-import SwiftUI
+import Foundation
+import Combine
 
-class MainViewModel: ObservableObject{
-    
-    @Published var searchQuery = ""
+final class MainViewModel {
     
 }

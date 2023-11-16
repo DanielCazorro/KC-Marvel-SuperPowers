@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// TODO: 
 final class RootViewModel: ObservableObject {
-    @Published var status = Status.loading
+    @Published var status = Status.loaded
+    
 }

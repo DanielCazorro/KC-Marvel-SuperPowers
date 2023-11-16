@@ -10,8 +10,8 @@ import SwiftUI
 struct MainView: View {
     @State private var filter: String = ""
     
+    
     var body: some View {
-        @StateObject var mainData = MainViewModel()
         
         
         NavigationStack {

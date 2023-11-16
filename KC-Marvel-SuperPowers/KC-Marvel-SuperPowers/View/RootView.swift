@@ -25,7 +25,7 @@ struct RootView: View {
             
         case .loaded:
             withAnimation {
-                Text("TODO: MAIN VIEW")
+                MainView()
             }
         }
     }

@@ -21,8 +21,6 @@
 		5D6984AA2B0629CD0021BABA /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984A92B0629CD0021BABA /* RootViewModel.swift */; };
 		5D6984AC2B062A480021BABA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984AB2B062A480021BABA /* StatusModel.swift */; };
 		5D6984AE2B062D1C0021BABA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984AD2B062D1C0021BABA /* MainView.swift */; };
-		5D6984B12B062EB00021BABA /* HerosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984B02B062EB00021BABA /* HerosViewModel.swift */; };
-		5D6984B72B0637500021BABA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984B62B0637500021BABA /* MainViewModel.swift */; };
 		5D6984BC2B063CD10021BABA /* HerosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984BB2B063CD10021BABA /* HerosInteractor.swift */; };
 		5D6984BF2B063D610021BABA /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984BE2B063D610021BABA /* Networker.swift */; };
 		5D6984C12B063E620021BABA /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C02B063E620021BABA /* BaseNetwork.swift */; };
@@ -30,6 +28,7 @@
 		5D6984C62B0640490021BABA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C52B0640490021BABA /* KeyChain.swift */; };
 		5D6984C92B06405D0021BABA /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6984C82B06405D0021BABA /* KeychainSwift */; };
 		5D6984CB2B06478A0021BABA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984CA2B06478A0021BABA /* LoadingView.swift */; };
+		5D6984CD2B064E3B0021BABA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984CC2B064E3B0021BABA /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,14 +66,13 @@
 		5D6984A92B0629CD0021BABA /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5D6984AB2B062A480021BABA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		5D6984AD2B062D1C0021BABA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		5D6984B02B062EB00021BABA /* HerosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosViewModel.swift; sourceTree = "<group>"; };
-		5D6984B62B0637500021BABA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5D6984BB2B063CD10021BABA /* HerosInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosInteractor.swift; sourceTree = "<group>"; };
 		5D6984BE2B063D610021BABA /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		5D6984C02B063E620021BABA /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		5D6984C22B063F490021BABA /* Constant_desa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant_desa.swift; sourceTree = "<group>"; };
 		5D6984C52B0640490021BABA /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		5D6984CA2B06478A0021BABA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5D6984CC2B064E3B0021BABA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +196,7 @@
 			children = (
 				5D6984BA2B063CC50021BABA /* Interactor */,
 				5D6984A92B0629CD0021BABA /* RootViewModel.swift */,
-				5D6984B02B062EB00021BABA /* HerosViewModel.swift */,
-				5D6984B62B0637500021BABA /* MainViewModel.swift */,
+				5D6984CC2B064E3B0021BABA /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -366,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6984B12B062EB00021BABA /* HerosViewModel.swift in Sources */,
 				5D5E68652AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld in Sources */,
 				5D6984AE2B062D1C0021BABA /* MainView.swift in Sources */,
 				5D6984AC2B062A480021BABA /* StatusModel.swift in Sources */,
@@ -378,11 +374,11 @@
 				5D6984A32B0624110021BABA /* MarvelCharacters.swift in Sources */,
 				5D6984C32B063F490021BABA /* Constant_desa.swift in Sources */,
 				5D6984BC2B063CD10021BABA /* HerosInteractor.swift in Sources */,
-				5D6984B72B0637500021BABA /* MainViewModel.swift in Sources */,
 				5D5E685B2AFE257A00000750 /* ContentView.swift in Sources */,
 				5D5E68592AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift in Sources */,
 				5D6984BF2B063D610021BABA /* Networker.swift in Sources */,
 				5D6984C12B063E620021BABA /* BaseNetwork.swift in Sources */,
+				5D6984CD2B064E3B0021BABA /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
