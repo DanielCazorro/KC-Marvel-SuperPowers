@@ -14,7 +14,15 @@ struct RootView: View {
         switch rootViewModel.status{
             
         case .loading:
-            Text("TODO: LOADING -> Moving to loaded")
+            withAnimation{
+                Image(systemName: "clock.circle")
+                    .resizable()
+                    .frame(width: 250, height: 250)
+            }
+            Text("Loading")
+                .font(.title)
+                .bold()
+                .foregroundStyle(.orange)
             
         case .error(error: let errorString):
             withAnimation {

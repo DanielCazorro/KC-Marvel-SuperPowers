@@ -11,16 +11,18 @@ struct MainView: View {
     @State private var filter: String = ""
     
     var body: some View {
+        @StateObject var mainData = MainViewModel()
+        
+        
         NavigationStack {
             List{
                 
             }
             .navigationTitle("Marvel Characters")
-            
             .searchable(text: $filter,
-                        placement: .navigationBarDrawer(displayMode: .always),
+                        placement: .navigationBarDrawer(displayMode: .automatic),
                         prompt: "Search Characters...")
-
+            
             
         }
     }

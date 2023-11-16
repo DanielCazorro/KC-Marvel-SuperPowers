@@ -13,7 +13,7 @@ final class HerosViewModel: ObservableObject {
     @Published var status = Status.loading
     
     var suscriptors = Set<AnyCancellable>()
-    
+
     
     
 }
