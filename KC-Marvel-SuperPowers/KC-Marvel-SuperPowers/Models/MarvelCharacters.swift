@@ -75,7 +75,7 @@ enum ItemType: String, Codable {
 struct Thumbnail: Codable {
     let path: String
     let thumbnailExtension: Extension
-
+    
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
