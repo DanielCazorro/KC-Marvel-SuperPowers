@@ -8,29 +8,27 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel: MainViewModel = MainViewModel() // Inicializa @StateObject
+    @StateObject var mainViewModel: MainViewModel = MainViewModel()
     
     var body: some View {
-        NavigationView {
-            List(viewModel.characters, id: \.id) { character in
-                NavigationLink(destination: HeroDetailView(hero: character)) {
-                    HStack {
-                        // Muestra la información del héroe en cada fila de la lista
-                        Image(systemName: "person.fill")
-                            .frame(width: 50, height: 50) // TODO: Reemplazar esto con la imagen real del héroe
-                        Text(character.name)
+        
+        NavigationStack{
+            List{
+                if let characters = mainViewModel.characters {
+                    ForEach(characters) { character in
+                        NavigationLink {
+                            MainDetailView(character: character)
+                        } label: {
+                            MainRowView(character: character)
+                        }
                     }
                 }
             }
-            .navigationTitle("Marvel Characters")
-            // Llama al método para cargar los héroes cuando aparece la vista
-            .onAppear {
-                viewModel.fetchHeroes()
-            }
+            .navigationTitle("Marvel")
         }
     }
 }
 
 #Preview {
-    MainView()
+    MainView(mainViewModel: MainViewModel(testing: true))
 }

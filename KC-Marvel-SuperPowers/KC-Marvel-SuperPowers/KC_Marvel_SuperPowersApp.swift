@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct KC_Marvel_SuperPowersApp: App {
-    @StateObject var rootViewModel = RootViewModel()
+    @StateObject var mainViewModel = MainViewModel()
     
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(rootViewModel)
+            MainView()
+                .environmentObject(mainViewModel)
         }
     }
 }

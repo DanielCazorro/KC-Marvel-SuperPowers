@@ -38,14 +38,11 @@ enum paramsKeys: String {
 struct BaseNetwork {
     
     //FIXME: Comprboar este código
-    func getSessionHero(filter: String) -> URLRequest{
-        let urlCad = "\(server)\(endpoints.herosList.rawValue)"
+    func getSessionHero() -> URLRequest{
+        let url = URL(string: "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&ts=1&hash=341fc6e22d3f05d92fece7a5ca724310&orderBy=-modified")
         
-        var request: URLRequest = URLRequest(url: URL(string: urlCad)!)
-        request.httpMethod = HTTPMethods.get // FIXME: MIRAR AQUÍ QUE PUEDE SER POST
-        
-        request.httpBody = try? JSONEncoder().encode(MarvelCharactersFilter(name: filter))
-        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
+        var request: URLRequest = URLRequest(url: url!)
+        request.httpMethod = HTTPMethods.get
         
         return request
     }
