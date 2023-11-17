@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D00B90F2B07773800295E21 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D00B90E2B07773800295E21 /* HeroDetailView.swift */; };
 		5D5E68592AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */; };
-		5D5E685B2AFE257A00000750 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E685A2AFE257A00000750 /* ContentView.swift */; };
 		5D5E685D2AFE257B00000750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E685C2AFE257B00000750 /* Assets.xcassets */; };
 		5D5E68602AFE257B00000750 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5E685F2AFE257B00000750 /* Preview Assets.xcassets */; };
-		5D5E68622AFE257B00000750 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E68612AFE257B00000750 /* Persistence.swift */; };
-		5D5E68652AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E68632AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld */; };
 		5D5E686F2AFE257B00000750 /* KC_Marvel_SuperPowersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E686E2AFE257B00000750 /* KC_Marvel_SuperPowersTests.swift */; };
 		5D5E68792AFE257B00000750 /* KC_Marvel_SuperPowersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E68782AFE257B00000750 /* KC_Marvel_SuperPowersUITests.swift */; };
 		5D5E687B2AFE257B00000750 /* KC_Marvel_SuperPowersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E687A2AFE257B00000750 /* KC_Marvel_SuperPowersUITestsLaunchTests.swift */; };
@@ -26,8 +23,6 @@
 		5D6984BF2B063D610021BABA /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984BE2B063D610021BABA /* Networker.swift */; };
 		5D6984C12B063E620021BABA /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C02B063E620021BABA /* BaseNetwork.swift */; };
 		5D6984C32B063F490021BABA /* Constant_desa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C22B063F490021BABA /* Constant_desa.swift */; };
-		5D6984C62B0640490021BABA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984C52B0640490021BABA /* KeyChain.swift */; };
-		5D6984C92B06405D0021BABA /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6984C82B06405D0021BABA /* KeychainSwift */; };
 		5D6984CB2B06478A0021BABA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984CA2B06478A0021BABA /* LoadingView.swift */; };
 		5D6984CD2B064E3B0021BABA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6984CC2B064E3B0021BABA /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -53,11 +48,8 @@
 		5D00B90E2B07773800295E21 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		5D5E68552AFE257A00000750 /* KC-Marvel-SuperPowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KC-Marvel-SuperPowers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KC_Marvel_SuperPowersApp.swift; sourceTree = "<group>"; };
-		5D5E685A2AFE257A00000750 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D5E685C2AFE257B00000750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D5E685F2AFE257B00000750 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5D5E68612AFE257B00000750 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		5D5E68642AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KC_Marvel_SuperPowers.xcdatamodel; sourceTree = "<group>"; };
 		5D5E686A2AFE257B00000750 /* KC-Marvel-SuperPowersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KC-Marvel-SuperPowersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5E686E2AFE257B00000750 /* KC_Marvel_SuperPowersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KC_Marvel_SuperPowersTests.swift; sourceTree = "<group>"; };
 		5D5E68742AFE257B00000750 /* KC-Marvel-SuperPowersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KC-Marvel-SuperPowersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +64,6 @@
 		5D6984BE2B063D610021BABA /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		5D6984C02B063E620021BABA /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		5D6984C22B063F490021BABA /* Constant_desa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant_desa.swift; sourceTree = "<group>"; };
-		5D6984C52B0640490021BABA /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		5D6984CA2B06478A0021BABA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5D6984CC2B064E3B0021BABA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6984C92B06405D0021BABA /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,12 +118,9 @@
 			children = (
 				5D5E685C2AFE257B00000750 /* Assets.xcassets */,
 				5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */,
-				5D5E685A2AFE257A00000750 /* ContentView.swift */,
 				5DC27B352B0764AF00DA04C0 /* UI */,
-				5D6984C42B06403B0021BABA /* Tools */,
 				5D6984BD2B063D4A0021BABA /* Services */,
 				5D6984A12B0623B40021BABA /* Models */,
-				5D6984A42B0624E20021BABA /* CoreData */,
 				5D5E685E2AFE257B00000750 /* Preview Content */,
 			);
 			path = "KC-Marvel-SuperPowers";
@@ -171,15 +158,6 @@
 				5D6984AB2B062A480021BABA /* StatusModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		5D6984A42B0624E20021BABA /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				5D5E68612AFE257B00000750 /* Persistence.swift */,
-				5D5E68632AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		5D6984A52B0628E70021BABA /* View */ = {
@@ -221,14 +199,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		5D6984C42B06403B0021BABA /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				5D6984C52B0640490021BABA /* KeyChain.swift */,
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
 		5DC27B352B0764AF00DA04C0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,7 +225,6 @@
 			);
 			name = "KC-Marvel-SuperPowers";
 			packageProductDependencies = (
-				5D6984C82B06405D0021BABA /* KeychainSwift */,
 			);
 			productName = "KC-Marvel-SuperPowers";
 			productReference = 5D5E68552AFE257A00000750 /* KC-Marvel-SuperPowers.app */;
@@ -330,7 +299,6 @@
 			);
 			mainGroup = 5D5E684C2AFE257A00000750;
 			packageReferences = (
-				5D6984C72B06405D0021BABA /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 5D5E68562AFE257A00000750 /* Products */;
 			projectDirPath = "";
@@ -374,19 +342,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D5E68652AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld in Sources */,
 				5D6984AE2B062D1C0021BABA /* MainView.swift in Sources */,
 				5D6984AC2B062A480021BABA /* StatusModel.swift in Sources */,
 				5D6984CB2B06478A0021BABA /* LoadingView.swift in Sources */,
 				5D6984AA2B0629CD0021BABA /* RootViewModel.swift in Sources */,
-				5D6984C62B0640490021BABA /* KeyChain.swift in Sources */,
-				5D5E68622AFE257B00000750 /* Persistence.swift in Sources */,
 				5D6984A72B06290B0021BABA /* RootView.swift in Sources */,
 				5D6984A32B0624110021BABA /* MarvelCharacters.swift in Sources */,
 				5D6984C32B063F490021BABA /* Constant_desa.swift in Sources */,
 				5D6984BC2B063CD10021BABA /* HerosInteractor.swift in Sources */,
 				5D00B90F2B07773800295E21 /* HeroDetailView.swift in Sources */,
-				5D5E685B2AFE257A00000750 /* ContentView.swift in Sources */,
 				5D5E68592AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift in Sources */,
 				5D6984BF2B063D610021BABA /* Networker.swift in Sources */,
 				5D6984C12B063E620021BABA /* BaseNetwork.swift in Sources */,
@@ -720,38 +684,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5D6984C72B06405D0021BABA /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5D6984C82B06405D0021BABA /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D6984C72B06405D0021BABA /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		5D5E68632AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5D5E68642AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodel */,
-			);
-			currentVersion = 5D5E68642AFE257B00000750 /* KC_Marvel_SuperPowers.xcdatamodel */;
-			path = KC_Marvel_SuperPowers.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5D5E684D2AFE257A00000750 /* Project object */;
 }
