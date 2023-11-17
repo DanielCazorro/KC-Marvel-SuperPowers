@@ -22,7 +22,7 @@ struct LoadingView: View {
             .font(.title)
             .foregroundStyle(.orange)
             .padding()
-            
+        
         
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol HerosInteractorProtocol: AnyObject {
-    func getHeros(filter: String) -> AnyPublisher<[MarvelCharacters], Error>
+    func getHeroes(filter: String) -> AnyPublisher<MarvelCharacters, Error>
 }
 
 final class HerosInteractor: HerosInteractorProtocol {
@@ -21,7 +21,8 @@ final class HerosInteractor: HerosInteractorProtocol {
         self.baseNetwork = baseNetwork
     }
     
-    func getHeros(filter: String) -> AnyPublisher<[MarvelCharacters], Error> {
-        return networker.callServer(type: [MarvelCharacters].self, request: baseNetwork.getSessionHero(filter: filter))
+    func getHeroes(filter: String) -> AnyPublisher<MarvelCharacters, Error> {
+        return networker.callServer(type: MarvelCharacters.self, request: baseNetwork.getSessionHero(filter: filter))
     }
 }
+

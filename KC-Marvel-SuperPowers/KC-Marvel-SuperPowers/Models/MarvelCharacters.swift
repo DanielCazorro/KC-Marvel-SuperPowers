@@ -7,7 +7,20 @@
 
 import Foundation
 
-// TODO: Model from API Working: Need to fix later
+struct MarvelCharacter {
+    let id: Int
+    let name: String
+    let description: String
+    let thumbnailPath: String // Ruta de la imagen
+    
+    // Inicializador para datos de prueba
+    init(id: Int, name: String, description: String, thumbnailPath: String) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.thumbnailPath = thumbnailPath
+    }
+}
 
 // MARK: - MarvelCharacters
 struct MarvelCharacters: Codable {
