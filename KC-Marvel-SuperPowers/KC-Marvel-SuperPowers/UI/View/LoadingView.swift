@@ -23,7 +23,7 @@ struct LoadingView: View {
             .foregroundStyle(.orange)
             .padding()
         
-        
+        ProgressView()
     }
 }
 
