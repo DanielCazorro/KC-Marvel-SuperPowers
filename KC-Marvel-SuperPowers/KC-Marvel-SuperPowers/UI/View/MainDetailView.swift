@@ -19,8 +19,9 @@ struct MainDetailView: View {
                 .font(.title)
                 .bold()
             // Aquí se podrá mostrar la imagen del héroe si tenemos la URL de la imagen en el modelo
-            AsyncImage(url: URL(string: character.thumbnail.path)) { photo in
-            // foto descragada
+            AsyncImage(url: URL(string:
+                                    "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension)")) { photo in
+                // foto descragada
                 photo
                     .resizable()
                     .cornerRadius(20)
@@ -30,7 +31,7 @@ struct MainDetailView: View {
                 Image(systemName: "photo")
                     .resizable()
                     .cornerRadius(20)
-                        .opacity(0.8)
+                    .opacity(0.8)
             }
             
             // Description
@@ -43,7 +44,7 @@ struct MainDetailView: View {
 }
 
 /*
-#Preview {
-    MainDetailView(character: character)
-}
-*/
+ #Preview {
+ MainDetailView(character: character)
+ }
+ */
