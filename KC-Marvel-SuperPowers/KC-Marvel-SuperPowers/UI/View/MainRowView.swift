@@ -12,31 +12,40 @@ struct MainRowView: View {
     
     var body: some View {
         
-        VStack {
-            // Aquí Deberá ir la foto del personaje
-            Image(systemName: "photo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+        ZStack {
+            AsyncImage(url: URL(string: character.thumbnail.path)) { photo in
+                photo
+                    .resizable()
+                    .cornerRadius(20)
+                    .opacity(0.8)
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .cornerRadius(20)
+                    .opacity(0.8)
+            }
             
-            VStack {
-                Text("\(character.description)")
-                    .padding(.top, 10)
-                
+            VStack(alignment: .leading) {
+                // NAme
+                HStack{
+                    Text(character.name)
+                        .font(.title2)
+                        .foregroundStyle(.black)
+                        .bold()
+                        .padding([.top, .leading], 20)
+                    Spacer()
+                }
                 Spacer()
                 
-                ZStack {
-                    Text("\(character.name)")
-                        .bold()
-                        .font(.title)
-                        .foregroundColor(.orange)
-                }
             }
         }
     }
 }
 
-let character1 = Character(id: 1, name: "Daniel", description: "The master, the only one who knows the true", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
 
-#Preview {
-    MainRowView(character: character1)
-}
+/*
+ #Preview {
+ MainRowView(character: Character(id: 1, name: "Goku", description: "", thumbnail: Thumbnail(from: ), resourceURI: "", modified: ""))
+ }
+ */
+

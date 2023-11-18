@@ -40,17 +40,21 @@ enum paramsKeys: String {
 }
 
 struct BaseNetwork {
-    
-    //FIXME: Comprboar este código
-    func getSessionHero() -> URLRequest{
+    func getSessionHero() -> URLRequest {
+        /*
+        let urlString = "\(server)\(endpoints.herosList.rawValue)?apikey=\(paramsKeys.publicKey.rawValue)&\(paramsKeys.ts.rawValue)=1&hash=\(paramsKeys.hash.rawValue)&orderBy=-modified"
+        */
         
-        /*  let url = URL(string: "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&ts=1&hash=341fc6e22d3f05d92fece7a5ca724310&orderBy=-modified") */
+        let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified"
         
-        let url = URL(string: "\(server)&\(endpoints.herosList)?apikey=\(paramsKeys.publicKey)&\(paramsKeys.ts)=1&hash=\(paramsKeys.hash)&orderBy=-modified")
+        guard let url = URL(string: urlString) else {
+            fatalError("Invalid URL")
+        }
         
-        var request: URLRequest = URLRequest(url: url!)
+        var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.get
         
         return request
     }
 }
+

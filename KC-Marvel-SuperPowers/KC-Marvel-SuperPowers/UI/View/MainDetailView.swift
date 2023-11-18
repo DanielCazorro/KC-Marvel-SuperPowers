@@ -17,21 +17,33 @@ struct MainDetailView: View {
             // Muestra los detalles del héroe aquí
             Text(character.name)
                 .font(.title)
+                .bold()
             // Aquí se podrá mostrar la imagen del héroe si tenemos la URL de la imagen en el modelo
-            Image(systemName: "photo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 250, height: 250)
-            Text(character.description)
-                .padding()
+            AsyncImage(url: URL(string: character.thumbnail.path)) { photo in
+            // foto descragada
+                photo
+                    .resizable()
+                    .cornerRadius(20)
+                    .opacity(0.8)
+                    .padding([.leading, .trailing], 10)
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .cornerRadius(20)
+                        .opacity(0.8)
+            }
             
+            // Description
+            Text(character.description)
+                .foregroundStyle(.gray)
+                .font(.caption)
         }
         .navigationTitle(character.name)
     }
 }
 
-let character = Character(id: 123, name: "Spider-Man", description: "Friendly neighborhood superhero.", thumbnail: Thumbnail(path: "https://via.placeholder.com/150", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
-
+/*
 #Preview {
     MainDetailView(character: character)
 }
+*/

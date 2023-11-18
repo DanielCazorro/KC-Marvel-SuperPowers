@@ -38,5 +38,22 @@ struct Character: Codable, Identifiable {
 
 struct Thumbnail: Codable {
     let path: String
-    let thumbnailExtension: String
+    var thumbnailExtension: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case path
+        case thumbnailExtension = "extension"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        path = try container.decode(String.self, forKey: .path)
+        
+        // Manejar el caso donde no hay una extensión proporcionada en la URL
+        if let decodedExtension = try? container.decodeIfPresent(String.self, forKey: .thumbnailExtension) {
+            thumbnailExtension = decodedExtension
+        } else {
+            thumbnailExtension = "jpg" // Establecer una extensión predeterminada
+        }
+    }
 }
