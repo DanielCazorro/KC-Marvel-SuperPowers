@@ -40,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		5D00B90E2B07773800295E21 /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
+		5D174C7F2B0942FF00E6CD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5D5AAA282B07E412001FA6EF /* MainRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRowView.swift; sourceTree = "<group>"; };
 		5D5E68552AFE257A00000750 /* KC-Marvel-SuperPowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KC-Marvel-SuperPowers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KC_Marvel_SuperPowersApp.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		5D5E68572AFE257A00000750 /* KC-Marvel-SuperPowers */ = {
 			isa = PBXGroup;
 			children = (
+				5D174C7F2B0942FF00E6CD09 /* Info.plist */,
 				5D5E685C2AFE257B00000750 /* Assets.xcassets */,
 				5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */,
 				5DC27B352B0764AF00DA04C0 /* UI */,
@@ -489,6 +491,7 @@
 				DEVELOPMENT_TEAM = 9GK3478S4Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KC-Marvel-SuperPowers/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -518,6 +521,7 @@
 				DEVELOPMENT_TEAM = 9GK3478S4Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KC-Marvel-SuperPowers/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
