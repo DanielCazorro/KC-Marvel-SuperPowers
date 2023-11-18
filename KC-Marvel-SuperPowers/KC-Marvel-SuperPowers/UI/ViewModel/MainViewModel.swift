@@ -42,13 +42,13 @@ class MainViewModel: ObservableObject {
                 }
             } receiveValue: { data in
                 self.characters = data.data.results
-                print("Número de personajes recibidos: \(self.characters?.count ?? 0)")
+                //print("Número de personajes recibidos: \(self.characters?.count ?? 0)")
                 
-                if let characters = self.characters {
+                /*if let characters = self.characters {
                     for character in characters {
                         print("URL de imagen para \(character.name): \(character.thumbnail.path).\(character.thumbnail.thumbnailExtension ?? "")")
                     }
-                }
+                }*/
             }
             .store(in: &suscriptor)
     }
