@@ -17,11 +17,11 @@ class MainViewModel: ObservableObject {
         if(testing) {
             getCharacterTest()
         } else {
-            getCharacters()
+            getCharacters(filter: "")
         }
     }
     
-    func getCharacters() {
+    func getCharacters(filter: String) {
         URLSession.shared
             .dataTaskPublisher(for: BaseNetwork().getSessionHero())
             .tryMap {

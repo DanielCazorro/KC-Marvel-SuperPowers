@@ -29,7 +29,7 @@ struct MainRowView: View {
                 HStack{
                     Text(character.name)
                         .font(.title2)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.white)
                         .bold()
                         .padding([.top, .leading], 20)
                     Spacer()

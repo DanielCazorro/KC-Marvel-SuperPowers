@@ -20,7 +20,7 @@ struct MainView: View {
                             MainDetailView(character: character)
                         } label: {
                             MainRowView(character: character)
-                                .frame(height: 180)
+                                .frame(height: 225)
                                 .padding(.vertical, 8)
                                 .background(Color.clear)
                                 .cornerRadius(25)
@@ -40,7 +40,7 @@ struct MainView: View {
                     prompt: "Search Characters")
         .onChange(of: filter) { oldValue, newValue in
             //Ha cambiado el filtro de búsqueda
-            mainViewModel.getCharacters()
+            mainViewModel.getCharacters(filter: newValue)
         }
     }
 }
