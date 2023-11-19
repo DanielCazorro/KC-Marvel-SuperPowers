@@ -9,48 +9,50 @@ import Foundation
 import Combine
 
 class MainViewModel: ObservableObject {
-    @Published var characters: [Character]?
-    
+    @Published var characters: [Character] = [] // Contendrá todos los personajes
+    private var offset = 0
+    private let limit = 20
     private var suscriptor = Set<AnyCancellable>()
     
     init(testing: Bool = false) {
         if(testing) {
             getCharacterTest()
         } else {
-            getCharacters(filter: "")
+            getCharacters()
         }
     }
     
-    func getCharacters(filter: String) {
+    func getCharacters() {
         URLSession.shared
-            .dataTaskPublisher(for: BaseNetwork().getSessionHero())
-            .tryMap {
-                guard let response = $0.response as? HTTPURLResponse,
-                      response.statusCode == 200 else {
+            .dataTaskPublisher(for: BaseNetwork().getSessionHero(offset: offset, limit: limit)) // Llama a getSessionHero con offset y limit
+            .tryMap { output in
+                guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
                     throw URLError(.badServerResponse)
                 }
-                return $0.data
+                return output.data // Retorna los datos recibidos
             }
             .decode(type: CharacterDataWrapper.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    print("Finished receiving data")
-                case .failure(let error):
-                    print("Error receiving data: \(error)")
-                }
-            } receiveValue: { data in
-                self.characters = data.data.results
-                //print("Número de personajes recibidos: \(self.characters?.count ?? 0)")
-                
-                /*if let characters = self.characters {
-                 for character in characters {
-                 print("URL de imagen para \(character.name): \(character.thumbnail.path).\(character.thumbnail.thumbnailExtension ?? "")")
-                 }
-                 }*/
+            .sink(receiveCompletion: { _ in }) { data in
+                self.characters = data.data.results // Actualiza los personajes con los datos recibidos
             }
             .store(in: &suscriptor)
+    }
+    
+
+    func loadMoreCharacters() {
+        offset += limit 
+        getCharacters()
+    }
+    
+    func filterCharacters(with searchText: String) {
+        if searchText.isEmpty {
+            // Si el texto de búsqueda está vacío, mostrar todos los personajes
+            getCharacters()
+        } else {
+            // Filtrar personajes basados en el searchText
+            self.characters = self.characters.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
     }
     
     func getCharacterTest() {

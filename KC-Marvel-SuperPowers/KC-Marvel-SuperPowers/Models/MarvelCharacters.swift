@@ -7,8 +7,6 @@
 
 import Foundation
 
-// Vamos a cambiar: Probaremos a utilizar los que se encuentra en public: v1/public/characters dentro de developermarvel
-
 struct CharacterDataWrapper: Codable{
     let code: Int
     let status: String
@@ -27,13 +25,17 @@ struct CharacterDataContainer: Codable {
     let results: [Character]
 }
 
-struct Character: Codable, Identifiable {
+struct Character: Codable, Identifiable, Equatable {
     let id: Int
     let name: String
     let description: String
     let thumbnail: Thumbnail // thumbnail (Image, optional): The representative image for this character.
     let resourceURI: String
     let modified: String
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id // Implementa la lógica de comparación según lo necesario
+    }
 }
 
 struct Thumbnail: Codable {

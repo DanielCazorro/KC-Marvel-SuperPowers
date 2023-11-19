@@ -31,7 +31,6 @@ enum endpoints: String {
     
 }
 
-// FIXME: Esto no debería ir aquí seguramente, pero lo dejamos hasta que funcione la app y ya lo movemos: NUNCA PONER CLAVES EN EL CÓDIGO!!!
 enum paramsKeys: String {
     case publicKey = "c103d2622751066f8724a640dc83d26b"
     case ts = "1"
@@ -40,12 +39,8 @@ enum paramsKeys: String {
 }
 
 struct BaseNetwork {
-    func getSessionHero() -> URLRequest {
-        /*
-        let urlString = "\(server)\(endpoints.herosList.rawValue)?apikey=\(paramsKeys.publicKey.rawValue)&\(paramsKeys.ts.rawValue)=1&hash=\(paramsKeys.hash.rawValue)&orderBy=-modified"
-        */
-        
-        let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified"
+    func getSessionHero(offset: Int = 0, limit: Int = 20) -> URLRequest {
+        let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified&offset=\(offset)&limit=\(limit)"
         
         guard let url = URL(string: urlString) else {
             fatalError("Invalid URL")
