@@ -24,7 +24,7 @@ struct MainView: View {
                                 .padding(.vertical, 8)
                                 .background(Color.clear)
                                 .cornerRadius(25)
-                                .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 4)
+                                .shadow(color: Color.black.opacity(0.8), radius: 4, x: 0, y: 4)
                                 .transition(.move(edge: .leading))
                         }
                     }

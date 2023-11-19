@@ -17,6 +17,7 @@ struct MainRowView: View {
             AsyncImage(url: URL(string: "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension)")) { photo in
                 photo
                     .resizable()
+                    .scaledToFit()
                     .cornerRadius(20)
                     .opacity(0.8)
                 
@@ -28,9 +29,9 @@ struct MainRowView: View {
                 // NAme
                 HStack{
                     Text(character.name)
-                        .font(.title2)
-                        .foregroundStyle(.white)
-                        .bold()
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
                         .padding([.top, .leading], 20)
                     Spacer()
                 }
