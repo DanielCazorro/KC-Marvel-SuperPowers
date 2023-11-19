@@ -16,7 +16,6 @@ final class MainViewTests: XCTestCase {
     func testViewLoads() {
         let mainViewModel = MainViewModel()
         let mainView = MainView(mainViewModel: mainViewModel)
-        let finalView = mainView.environmentObject(mainViewModel)
         XCTAssertNotNil(mainView)
     }
 }

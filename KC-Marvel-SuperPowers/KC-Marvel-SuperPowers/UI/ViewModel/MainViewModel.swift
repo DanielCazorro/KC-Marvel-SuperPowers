@@ -55,13 +55,16 @@ class MainViewModel: ObservableObject {
     
     func getCharacterTest() {
         
-        /*
-         let character1 = Character(id: 1, name: "Daniel San", description: "The Master", thumbnail: Thumbnail(path: "https://pics.filmaffinity.com/Ip_Man-690169626-mmed.jpg", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
+        
+         let character1 = Character(id: 1, name: "Iron Man", description: "Geius, billionaire, playboy, philanthropist.", thumbnail: Thumbnail(path: "https://i.blogs.es/0f256b/iron-man/450_1000", thumbnailExtension: .jpg), resourceURI: "https://www.example.com/character/2", modified: "2023-11-17T12:00:00Z")
          
-         let character2 = Character(id: 2, name: "Hit-Monkey", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
+         let character2 = Character(id: 2, name: "Spider-Man", description: "Your friendly neighborhood Spider-Man.", thumbnail: Thumbnail(path: "https://img2.rtve.es/i/?w=1600&i=1442912664626", thumbnailExtension: .jpg), resourceURI: "https://www.example.com/character/2", modified: "2023-11-17T12:00:00Z")
          
-         */
-        self.characters = []
+        let character3 = Character(id: 3, name: "Hulk", description: "Smash!", thumbnail: Thumbnail(path: "https://cdn.vegaoo.es/images/rep_art/gra/321/0/321071/figura-de-plastico-hulk-avengers-9-cm", thumbnailExtension: .jpg), resourceURI: "https://www.example.com/character/3", modified: "2023-11-17T12:00:00Z")
+
+        let character4 = Character(id: 10, name: "Captain America", description: "Super-soldier and shield thrower.", thumbnail: Thumbnail(path: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2014/07/351628-marvel-anuncia-nuevo-capitan-america", thumbnailExtension: .jpg), resourceURI: "https://www.example.com/character/10", modified: "2023-11-17T12:00:00Z")
+         
+        self.characters = [character1, character2, character3, character4]
         
     }
 }
