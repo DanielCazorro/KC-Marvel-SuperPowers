@@ -37,7 +37,7 @@ final class MainViewModelTests: XCTestCase {
     func testGetCharacters() {
         
         // Llamamos a getCharacters
-        viewModel.getCharacters(filter: "")
+        viewModel.getCharacters()
         
         // Después de la llamada, characters no debe ser nil
         XCTAssertNotNil(viewModel.characters)
