@@ -45,10 +45,10 @@ class MainViewModel: ObservableObject {
                 //print("Número de personajes recibidos: \(self.characters?.count ?? 0)")
                 
                 /*if let characters = self.characters {
-                    for character in characters {
-                        print("URL de imagen para \(character.name): \(character.thumbnail.path).\(character.thumbnail.thumbnailExtension ?? "")")
-                    }
-                }*/
+                 for character in characters {
+                 print("URL de imagen para \(character.name): \(character.thumbnail.path).\(character.thumbnail.thumbnailExtension ?? "")")
+                 }
+                 }*/
             }
             .store(in: &suscriptor)
     }
@@ -56,11 +56,11 @@ class MainViewModel: ObservableObject {
     func getCharacterTest() {
         
         /*
-        let character1 = Character(id: 1, name: "Daniel San", description: "The Master", thumbnail: Thumbnail(path: "https://pics.filmaffinity.com/Ip_Man-690169626-mmed.jpg", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
-        
-        let character2 = Character(id: 2, name: "Hit-Monkey", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
-        
-        */
+         let character1 = Character(id: 1, name: "Daniel San", description: "The Master", thumbnail: Thumbnail(path: "https://pics.filmaffinity.com/Ip_Man-690169626-mmed.jpg", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
+         
+         let character2 = Character(id: 2, name: "Hit-Monkey", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: "", modified: "")
+         
+         */
         self.characters = []
         
     }

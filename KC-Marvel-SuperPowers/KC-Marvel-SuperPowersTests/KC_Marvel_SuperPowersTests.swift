@@ -6,7 +6,94 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import KC_Marvel_SuperPowers
+
+
+// MARK: Main View Model Tests
+final class MainViewModelTests: XCTestCase {
+    var viewModel: MainViewModel!
+    
+    override func setUp() {
+        viewModel = MainViewModel(testing: true)
+    }
+    
+    override func tearDown() {
+        viewModel = nil
+        super.tearDown()
+    }
+    
+    func testGetCharacters() {
+        
+        // Llamamos a getCharacters
+        viewModel.getCharacters(filter: "")
+        
+        // Después de la llamada, characters no debe ser nil
+        XCTAssertNotNil(viewModel.characters)
+        
+    }
+}
+
+
+// MARK: Test Base Network
+
+final class BaseNetworkTests: XCTestCase {
+    var baseNetwork: BaseNetwork!
+    
+    override func setUp() {
+        super.setUp()
+        baseNetwork = BaseNetwork()
+    }
+    
+    override func tearDown() {
+        baseNetwork = nil
+        super.tearDown()
+    }
+    
+    func testGetSessionHero() {
+        let request = baseNetwork.getSessionHero()
+        
+        // Verificar que la solicitud no sea nula
+        XCTAssertNotNil(request)
+        
+        // Verificar que el método HTTP sea GET
+        XCTAssertEqual(request.httpMethod, "GET")
+        
+        // Verificar que la URL sea válida
+        guard let url = request.url else {
+            XCTFail("URL should not be nil")
+            return
+        }
+        
+        // Verificar la estructura básica de la URL
+        XCTAssertEqual(url.scheme, "https")
+        XCTAssertEqual(url.host, "gateway.marvel.com")
+        XCTAssertEqual(url.path, "/v1/public/characters")
+        
+        // Verificar que los parámetros estén presentes en la URL
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        XCTAssertNotNil(components?.queryItems)
+        
+    }
+}
+
+// MARK: Test Main Row View
+
+class MainRowViewTests: XCTestCase {
+    func testMainRowView() {
+        let character = Character(id: 25, name: "Goku", description: "Yes", thumbnail: Thumbnail(path: "https://play-lh.googleusercontent.com/proxy/M--NmuntpIS0tBP4ImXSXDDPKglGdc1FSFfK8WR_5DHnfhaTVMed5bmvmhXx4-ZtP0RVxbIW7s90Z6Wg1wiT3l_Ajno-UYX-cSqOFKcgCzI2aDNGRnzhGrc=s1920-w1920-h1080", thumbnailExtension: Thumbnail.jpg(rawValue: "jpg") ?? .jpg), resourceURI: "", modified: "")
+        
+        let mainRowView = MainRowView(character: character)
+        
+        // Obtener la vista envuelta por UIHostingController
+        let viewController = UIHostingController(rootView: mainRowView)
+        
+        // Verificar que la vista no sea nula
+        XCTAssertNotNil(viewController.view)
+        
+    }
+}
+
 
 final class KC_Marvel_SuperPowersTests: XCTestCase {
 
