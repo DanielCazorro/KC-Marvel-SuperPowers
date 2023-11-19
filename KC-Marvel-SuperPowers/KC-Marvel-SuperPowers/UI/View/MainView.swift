@@ -24,7 +24,7 @@ struct MainView: View {
                                 .padding(.vertical, 8)
                                 .background(Color.clear)
                                 .cornerRadius(25)
-                                .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
+                                .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 4)
                                 .transition(.move(edge: .leading))
                         }
                     }
@@ -33,8 +33,9 @@ struct MainView: View {
             .listStyle(PlainListStyle())
             .padding(.horizontal)
             .background(Color.clear)
-            .navigationTitle("Marvel")
+            .navigationTitle("Marvel Characters")
         }
+        // FIXME: Need to fix getCharacters(filter:)
         .searchable(text: $filter,
                     placement: .navigationBarDrawer(displayMode: .automatic),
                     prompt: "Search Characters")

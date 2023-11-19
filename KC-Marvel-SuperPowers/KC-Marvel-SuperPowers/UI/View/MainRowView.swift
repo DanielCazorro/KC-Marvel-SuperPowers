@@ -42,11 +42,9 @@ struct MainRowView: View {
 }
 
 
-
+let character1 = Character(id: 2, name: "Iron Man", description: "Geius, billionaire, playboy, philanthropist.", thumbnail: Thumbnail(path: "https://i.blogs.es/0f256b/iron-man/450_1000", thumbnailExtension: .jpg), resourceURI: "https://www.example.com/character/2", modified: "2023-11-17T12:00:00Z")
 
 #Preview {
-    MainRowView(character: Character(id: 25, name: "Goku", description: "Yes", thumbnail: Thumbnail(path: "https://play-lh.googleusercontent.com/proxy/M--NmuntpIS0tBP4ImXSXDDPKglGdc1FSFfK8WR_5DHnfhaTVMed5bmvmhXx4-ZtP0RVxbIW7s90Z6Wg1wiT3l_Ajno-UYX-cSqOFKcgCzI2aDNGRnzhGrc=s1920-w1920-h1080", thumbnailExtension: .jpg), resourceURI: "", modified: ""))
+    MainRowView(character: character1)
 }
-
-
 

@@ -55,9 +55,10 @@ struct MainDetailView: View {
     }
 }
 
+let character = Character(id: 2, name: "Iron Man", description: "Geius, billionaire, playboy, philanthropist.", thumbnail: Thumbnail(path: "https://i.blogs.es/0f256b/iron-man/450_1000", thumbnailExtension: .jpg), resourceURI: "https://www.example.com/character/2", modified: "2023-11-17T12:00:00Z")
 
-/*
+
  #Preview {
  MainDetailView(character: character)
  }
- */
+ 
