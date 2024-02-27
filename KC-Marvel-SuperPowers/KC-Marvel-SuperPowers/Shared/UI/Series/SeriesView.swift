@@ -24,7 +24,6 @@ struct SeriesView: View {
                 }
             }
             .navigationTitle("Series")
-            .navigationBarTitleDisplayMode(.inline) // Ajustar el tamaño de la barra de navegación
         }
     }
 }
