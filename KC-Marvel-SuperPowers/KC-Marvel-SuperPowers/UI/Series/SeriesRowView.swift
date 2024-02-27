@@ -56,5 +56,5 @@ struct SeriesRowView: View {
 }
 
 #Preview {
-    SeriesRowView(serie: Series(id: 1, title: "Daniel", description: "Daniel", resourceURI: "", startYear: 1, endYear: 2, rating: "", modified: "", thumbnail: Thumbnail(path: "", thumbnailExtension: .jpg)))
+    SeriesRowView(serie: Series(id: 1, title: "Daniel", description: "º", resourceURI: "", startYear: 5, endYear: 10, rating: "", modified: "", thumbnail: Thumbnail(path: "", thumbnailExtension: .jpg)))
 }

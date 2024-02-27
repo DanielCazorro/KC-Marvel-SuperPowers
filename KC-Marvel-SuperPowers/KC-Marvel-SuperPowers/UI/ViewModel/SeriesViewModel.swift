@@ -28,6 +28,8 @@ class SeriesViewModel: ObservableObject {
                modified: "2023-11-17T12:00:00Z", thumbnail: Thumbnail(path: "http://i.åannihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: .jpg))
         
         self.series = [serie]
+        print("Test series loaded: \(self.series)")
+
     }
     
     func getSeries(idHero: Int) {
@@ -46,13 +48,13 @@ class SeriesViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    print("Finished")
+                    print("Finished loading series")
                 case .failure(let error):
-                    print("Error: \(error)")
+                    print("Error loading series: \(error)")
                 }
             } receiveValue: { data in
                 self.series = data.data.results
-                print("Data: \(data)")
+                print("Series loaded: \(self.series)")
             }
             .store(in: &suscriptor)
     }

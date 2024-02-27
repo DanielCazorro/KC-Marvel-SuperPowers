@@ -28,7 +28,7 @@ struct SeriesDataContainer: Codable {
 struct Series: Codable, Identifiable {
     let id: Int
     let title: String
-    let description: String
+    let description: String?
     let resourceURI: String
     let startYear: Int
     let endYear: Int
