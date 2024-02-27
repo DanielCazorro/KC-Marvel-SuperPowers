@@ -7,30 +7,24 @@
 
 import Foundation
 
-// Dirección URL del servidor
+// URL base del servidor Marvel
 let server = "https://gateway.marvel.com"
 
-// Métodos del servidor
+// Métodos HTTP compatibles
 struct HTTPMethods {
-    static let post = "POST"
     static let get = "GET"
-    static let put = "PUT"
-    static let delete = "DELETE"
     
+    // Tipo de contenido JSON
     static let content = "application/json"
 }
 
-// Endpoints de la API
+// Endpoints de la API de Marvel
 enum endpoints: String {
     case herosList = "/v1/public/characters"
-    case comics = "/comics"
-    case creators = "/v1/public/creators"
-    case events = "/v1/public/events"
     case series = "/series"
-    case stories = "/v1/public/stories"
-    
 }
 
+// Claves de los parámetros para la autenticación en la API de Marvel
 enum paramsKeys: String {
     case publicKey = "c103d2622751066f8724a640dc83d26b"
     case ts = "1"
@@ -39,26 +33,31 @@ enum paramsKeys: String {
 }
 
 struct BaseNetwork {
+    /// Función para obtener una solicitud de sesión para obtener la lista de héroes
     func getSessionHero() -> URLRequest {
         let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified"
         
+        // Convertir la URL de cadena a objeto URL
         guard let url = URL(string: urlString) else {
             fatalError("Invalid URL")
         }
         
+        // Crear y configurar la solicitud URL
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.get
         
         return request
     }
     
+    /// Función para obtener una solicitud de sesión para obtener las series de un héroe específico
     func getSessionSeries(idHero: Int) -> URLRequest {
+        // Construir la URL con el ID del héroe para obtener sus series
         let url = URL(string: "\(server)\(endpoints.herosList.rawValue)/\(idHero)\(endpoints.series.rawValue)?apikey=\(paramsKeys.publicKey.rawValue)&ts=\(paramsKeys.ts.rawValue)&hash=\(paramsKeys.hash.rawValue)&orderBy=-modified")
         
+        // Crear y configurar la solicitud URL
         var request = URLRequest(url: url!)
         request.httpMethod = HTTPMethods.get
-        print("SESION Request: \(request)")
+        
         return request
     }
 }
-

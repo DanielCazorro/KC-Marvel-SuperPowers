@@ -106,6 +106,30 @@
 			path = Series;
 			sourceTree = "<group>";
 		};
+		5D15A1C22B8E7A73007A0914 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5D15A1C32B8E7A7A007A0914 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5D15A1C32B8E7A7A007A0914 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5D15A1C42B8E7A7E007A0914 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5D15A1C42B8E7A7E007A0914 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5D6984C02B063E620021BABA /* BaseNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		5D5E684C2AFE257A00000750 = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +153,11 @@
 		5D5E68572AFE257A00000750 /* KC-Marvel-SuperPowers */ = {
 			isa = PBXGroup;
 			children = (
+				5D15A1C22B8E7A73007A0914 /* Shared */,
 				5D174C7F2B0942FF00E6CD09 /* Info.plist */,
 				5D5E685C2AFE257B00000750 /* Assets.xcassets */,
 				5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */,
 				5DC27B352B0764AF00DA04C0 /* UI */,
-				5D6984BD2B063D4A0021BABA /* Services */,
 				5D6984A12B0623B40021BABA /* Models */,
 				5D5E685E2AFE257B00000750 /* Preview Content */,
 			);
@@ -181,14 +205,6 @@
 				5D15A1C02B8E6A08007A0914 /* SeriesViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5D6984BD2B063D4A0021BABA /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5D6984C02B063E620021BABA /* BaseNetwork.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		5DC27B352B0764AF00DA04C0 /* UI */ = {
