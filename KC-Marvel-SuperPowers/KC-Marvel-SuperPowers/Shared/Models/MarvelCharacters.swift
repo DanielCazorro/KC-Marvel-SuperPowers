@@ -25,17 +25,14 @@ struct CharacterDataContainer: Codable {
     let results: [Character]
 }
 
-struct Character: Codable, Identifiable, Equatable {
+struct Character: Codable, Identifiable {
     let id: Int
+    let title: String?
     let name: String
     let description: String
-    let thumbnail: Thumbnail // thumbnail (Image, optional): The representative image for this character.
+    let thumbnail: Thumbnail
     let resourceURI: String
     let modified: String
-    
-    static func == (lhs: Character, rhs: Character) -> Bool {
-        return lhs.id == rhs.id // Implementa la lógica de comparación según lo necesario
-    }
 }
 
 struct Thumbnail: Codable {
@@ -49,5 +46,7 @@ struct Thumbnail: Codable {
     
     enum jpg: String, Codable {
         case jpg = "jpg"
+        case gif = "gif"
+        case png = "png"
     }
 }

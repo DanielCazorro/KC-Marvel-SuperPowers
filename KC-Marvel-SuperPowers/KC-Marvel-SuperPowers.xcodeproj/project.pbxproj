@@ -110,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5D15A1C32B8E7A7A007A0914 /* Data */,
+				5D15A1C52B8E8027007A0914 /* Models */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -128,6 +129,15 @@
 				5D6984C02B063E620021BABA /* BaseNetwork.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5D15A1C52B8E8027007A0914 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D6984A22B0624110021BABA /* MarvelCharacters.swift */,
+				5D15A1B82B8E6772007A0914 /* MarvelSeries.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5D5E684C2AFE257A00000750 = {
@@ -192,8 +202,6 @@
 		5D6984A12B0623B40021BABA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D6984A22B0624110021BABA /* MarvelCharacters.swift */,
-				5D15A1B82B8E6772007A0914 /* MarvelSeries.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
