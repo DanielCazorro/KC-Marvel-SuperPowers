@@ -15,12 +15,15 @@ struct SeriesView: View {
         NavigationStack {
             List {
                 if let series = seriesViewModel.series {
+                    
                 }
             }
         }
     }
 }
 
+
+
 #Preview {
-    SeriesView(seriesViewModel: SeriesViewModel())
+    SeriesView(seriesViewModel: SeriesViewModel( idHero: 1))
 }

@@ -15,7 +15,7 @@ struct MainView: View {
         NavigationView {
             List(mainViewModel.characters) { character in
                 NavigationLink {
-//                    MainDetailView(character: character)
+                    SeriesView(seriesViewModel: SeriesViewModel(idHero: character.id))
                 } label: {
                     MainRowView(character: character)
                         .frame(height: 225)
