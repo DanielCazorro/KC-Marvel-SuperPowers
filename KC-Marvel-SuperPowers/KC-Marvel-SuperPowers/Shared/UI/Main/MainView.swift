@@ -31,15 +31,11 @@ struct MainView: View {
             .background(Color.clear)
             .navigationTitle("Marvel Characters")
         }
-        .searchable(text: $filter,
-                    placement: .navigationBarDrawer(displayMode: .automatic),
-                    prompt: "Search Characters")
-        .onChange(of: filter) { oldValue, newValue in
-            mainViewModel.filterCharacters(with: newValue)
-        }
+        
     }
 }
 
+
 #Preview {
-    MainView(mainViewModel: MainViewModel(testing: false))
+    MainView(mainViewModel: MainViewModel(testing: true))
 }

@@ -111,6 +111,7 @@
 			children = (
 				5D15A1C32B8E7A7A007A0914 /* Data */,
 				5D15A1C52B8E8027007A0914 /* Models */,
+				5DC27B352B0764AF00DA04C0 /* UI */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -167,7 +168,6 @@
 				5D174C7F2B0942FF00E6CD09 /* Info.plist */,
 				5D5E685C2AFE257B00000750 /* Assets.xcassets */,
 				5D5E68582AFE257A00000750 /* KC_Marvel_SuperPowersApp.swift */,
-				5DC27B352B0764AF00DA04C0 /* UI */,
 				5D6984A12B0623B40021BABA /* Models */,
 				5D5E685E2AFE257B00000750 /* Preview Content */,
 			);
@@ -218,9 +218,9 @@
 		5DC27B352B0764AF00DA04C0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5D6984A82B0629BF0021BABA /* ViewModel */,
 				5D15A1BA2B8E69D3007A0914 /* Main */,
 				5D15A1BB2B8E69E2007A0914 /* Series */,
-				5D6984A82B0629BF0021BABA /* ViewModel */,
 			);
 			path = UI;
 			sourceTree = "<group>";
