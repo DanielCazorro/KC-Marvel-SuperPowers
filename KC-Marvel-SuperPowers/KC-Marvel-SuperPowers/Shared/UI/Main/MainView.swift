@@ -18,10 +18,13 @@ struct MainView: View {
                     SeriesView(seriesViewModel: SeriesViewModel(idHero: character.id))
                 } label: {
                     MainRowView(character: character)
-                        .frame(height: 225)
-                        .padding(.vertical, 8)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: 200)
+                        .clipped() // Recorta la imagen para que no se extienda más allá de la celda
+                        .presentationCornerRadius(8)
+                        .shadow(radius: 5)
+                        .padding(5)
                         .background(Color.clear)
-                        .cornerRadius(25)
                         .shadow(color: Color.black.opacity(0.8), radius: 4, x: 0, y: 4)
                         .transition(.move(edge: .leading))
                 }
@@ -31,11 +34,9 @@ struct MainView: View {
             .background(Color.clear)
             .navigationTitle("Marvel Characters")
         }
-        
     }
 }
 
-
 #Preview {
-    MainView(mainViewModel: MainViewModel(testing: true))
+    MainView(mainViewModel: MainViewModel(testing: false))
 }
