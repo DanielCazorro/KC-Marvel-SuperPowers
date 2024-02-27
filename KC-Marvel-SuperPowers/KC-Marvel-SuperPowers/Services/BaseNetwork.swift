@@ -23,10 +23,10 @@ struct HTTPMethods {
 // Endpoints de la API
 enum endpoints: String {
     case herosList = "/v1/public/characters"
-    case comics = "/v1/public/comics"
+    case comics = "/comics"
     case creators = "/v1/public/creators"
     case events = "/v1/public/events"
-    case series = "/v1/public/series"
+    case series = "/series"
     case stories = "/v1/public/stories"
     
 }
@@ -39,8 +39,8 @@ enum paramsKeys: String {
 }
 
 struct BaseNetwork {
-    func getSessionHero(offset: Int = 0, limit: Int = 20) -> URLRequest {
-        let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified&offset=\(offset)&limit=\(limit)"
+    func getSessionHero() -> URLRequest {
+        let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified"
         
         guard let url = URL(string: urlString) else {
             fatalError("Invalid URL")
@@ -49,6 +49,15 @@ struct BaseNetwork {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.get
         
+        return request
+    }
+    
+    func getSessionSeries(idHero: Int) -> URLRequest {
+        let url = URL(string: "\(server)\(endpoints.herosList.rawValue)/\(idHero)\(endpoints.series.rawValue)?apikey=\(paramsKeys.publicKey.rawValue)&ts=\(paramsKeys.ts.rawValue)&hash=\(paramsKeys.hash.rawValue)&orderBy=-modified")
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = HTTPMethods.get
+        print("SESION Request: \(request)")
         return request
     }
 }
