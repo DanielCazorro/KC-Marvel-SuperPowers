@@ -24,7 +24,7 @@ class MainViewModel: ObservableObject {
     
     func getCharacters() {
         URLSession.shared
-            .dataTaskPublisher(for: BaseNetwork().getSessionHero(offset: offset, limit: limit)) // Llama a getSessionHero con offset y limit
+            .dataTaskPublisher(for: BaseNetwork().getSessionHero()) // Llama a getSessionHero con offset y limit
             .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
                     throw URLError(.badServerResponse)
