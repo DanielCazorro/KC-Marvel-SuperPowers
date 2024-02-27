@@ -33,31 +33,42 @@ enum paramsKeys: String {
 }
 
 struct BaseNetwork {
+    /// Función para obtener una URL construida con el endpoint y un subpath opcional para las series
+    private func getURL(endpoint:String, subPath:String = "") -> String{
+        var url = server
+        
+        url += "\(endpoint)\(subPath)"
+        url += "?apikey=\(paramsKeys.publicKey.rawValue)"
+        url += "&ts=\(paramsKeys.ts.rawValue)"
+        url += "&hash=\(paramsKeys.hash.rawValue)"
+        return url
+    }
+    
     /// Función para obtener una solicitud de sesión para obtener la lista de héroes
     func getSessionHero() -> URLRequest {
-        let urlString = "https://gateway.marvel.com/v1/public/characters?apikey=c103d2622751066f8724a640dc83d26b&hash=341fc6e22d3f05d92fece7a5ca724310&ts=1&orderBy=-modified"
+        // Construimos la URL para obtener la lista de héroes, ordenada por fecha de modificación descendente
+        var urlStr: String = getURL(endpoint: endpoints.herosList.rawValue)
+        urlStr += "&orderBy=-modified"
         
-        // Convertir la URL de cadena a objeto URL
-        guard let url = URL(string: urlString) else {
-            fatalError("Invalid URL")
-        }
-        
-        // Crear y configurar la solicitud URL
-        var request = URLRequest(url: url)
+        // Creamos la solicitud URLRequest
+        var request: URLRequest = URLRequest(url: URL(string: urlStr)!)
         request.httpMethod = HTTPMethods.get
-        
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
+        print(request)
         return request
     }
     
+    
     /// Función para obtener una solicitud de sesión para obtener las series de un héroe específico
     func getSessionSeries(idHero: Int) -> URLRequest {
-        // Construir la URL con el ID del héroe para obtener sus series
-        let url = URL(string: "\(server)\(endpoints.herosList.rawValue)/\(idHero)\(endpoints.series.rawValue)?apikey=\(paramsKeys.publicKey.rawValue)&ts=\(paramsKeys.ts.rawValue)&hash=\(paramsKeys.hash.rawValue)&orderBy=-modified")
+        // Construimos la URL para obtener las series de un héroe específico, ordenadas por fecha de modificación descendente
+        var urlStr: String = getURL(endpoint: endpoints.herosList.rawValue, subPath: "/\(idHero)/series")
+        urlStr += "&orderBy=-modified"
         
-        // Crear y configurar la solicitud URL
-        var request = URLRequest(url: url!)
+        // Creamos la solicitud URLRequest
+        var request: URLRequest = URLRequest(url: URL(string: urlStr)!)
         request.httpMethod = HTTPMethods.get
-        
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type") // Se añade el encabezado para indicar el tipo de contenido JSON
         return request
     }
 }
