@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct SeriesView: View {
+    
+    @StateObject var seriesViewModel: SeriesViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                if let series = seriesViewModel.series {
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    SeriesView()
+    SeriesView(seriesViewModel: SeriesViewModel())
 }

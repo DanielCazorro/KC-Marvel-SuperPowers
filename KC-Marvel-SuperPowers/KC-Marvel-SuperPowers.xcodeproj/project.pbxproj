@@ -91,8 +91,8 @@
 		5D15A1BA2B8E69D3007A0914 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				5D5AAA282B07E412001FA6EF /* MainRowView.swift */,
 				5D6984AD2B062D1C0021BABA /* MainView.swift */,
+				5D5AAA282B07E412001FA6EF /* MainRowView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
