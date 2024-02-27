@@ -11,25 +11,20 @@ struct SeriesView: View {
     @StateObject var seriesViewModel: SeriesViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 if let series = seriesViewModel.series {
                     // Verificar si se cargaron las series
-                    Text("Series count: \(series.count)")
-                    
                     ForEach(series) { serie in
-                        NavigationLink {
-                            // Vista a la que navegamos
-                            MainView()
-                        } label: {
-                            SeriesRowView(serie: serie)
-                        }
+                        SeriesRowView(serie: serie)
                     }
                 } else {
                     // Verificar si no se cargaron las series
                     Text("No series loaded")
                 }
             }
+            .navigationTitle("Series")
+            .navigationBarTitleDisplayMode(.inline) // Ajustar el tamaño de la barra de navegación
         }
     }
 }
