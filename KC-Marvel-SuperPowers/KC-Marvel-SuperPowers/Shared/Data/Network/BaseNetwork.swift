@@ -8,7 +8,7 @@
 import Foundation
 
 // URL base del servidor Marvel
-let server = "https://gateway.marvel.com"
+let marvelServer = "https://gateway.marvel.com"
 
 // Métodos HTTP compatibles
 struct HTTPMethods {
@@ -35,7 +35,7 @@ enum paramsKeys: String {
 struct BaseNetwork {
     /// Función para obtener una URL construida con el endpoint y un subpath opcional para las series
     private func getURL(endpoint:String, subPath:String = "", offset: Int? = nil, limit: Int? = nil) -> String{
-        var url = server
+        var url = marvelServer
         
         url += "\(endpoint)\(subPath)"
         url += "?apikey=\(paramsKeys.publicKey.rawValue)"

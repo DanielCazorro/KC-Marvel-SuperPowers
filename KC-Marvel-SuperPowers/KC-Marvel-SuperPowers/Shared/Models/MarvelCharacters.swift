@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Estructura que representa el wrapper de los datos del personaje
 struct CharacterDataWrapper: Codable{
     let code: Int
     let status: String
@@ -17,6 +18,7 @@ struct CharacterDataWrapper: Codable{
     let data: CharacterDataContainer
 }
 
+// Estructura que representa el contenedor de los datos del personaje
 struct CharacterDataContainer: Codable {
     let offset: Int
     let limit: Int
@@ -25,26 +27,29 @@ struct CharacterDataContainer: Codable {
     let results: [Character]
 }
 
+// Estructura que representa un personaje
 struct Character: Codable, Identifiable {
     let id: Int
-    let title: String?
-    let name: String
-    let description: String
-    let thumbnail: Thumbnail
-    let resourceURI: String
-    let modified: String
+    let title: String? // Título opcional del personaje
+    let name: String // Nombre del personaje
+    let description: String // Descripción del personaje
+    let thumbnail: Thumbnail // Miniatura del personaje
+    let resourceURI: String // URI de recursos del personaje
+    let modified: String // Fecha de modificación del personaje
 }
 
+// Estructura que representa la miniatura del personaje
 struct Thumbnail: Codable {
-    let path: String
-    var thumbnailExtension: jpg
-    
+    let path: String // Ruta de la miniatura
+    var thumbnailExtension: Extension // Extensión de la miniatura
+
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
     }
     
-    enum jpg: String, Codable {
+    // Enumeración para las posibles extensiones de la miniatura
+    enum Extension: String, Codable {
         case jpg = "jpg"
         case gif = "gif"
         case png = "png"

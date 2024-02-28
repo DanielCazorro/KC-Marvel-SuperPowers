@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Estructura que representa el wrapper de los datos de la serie
 struct SeriesDataWrapper: Codable {
     let code: Int
     let status: String
@@ -17,6 +18,7 @@ struct SeriesDataWrapper: Codable {
     let data: SeriesDataContainer
 }
 
+// Estructura que contiene los datos de la serie
 struct SeriesDataContainer: Codable {
     let offset: Int
     let limit: Int
@@ -25,14 +27,15 @@ struct SeriesDataContainer: Codable {
     let results: [Series]
 }
 
+// Estructura que representa una serie
 struct Series: Codable, Identifiable {
     let id: Int
-    let title: String
-    let description: String?
-    let resourceURI: String
-    let startYear: Int
-    let endYear: Int
-    let rating: String
-    let modified: String
-    let thumbnail: Thumbnail
+    let title: String // Título de la serie
+    let description: String? // Descripción opcional de la serie
+    let resourceURI: String // URI de recursos de la serie
+    let startYear: Int // Año de inicio de la serie
+    let endYear: Int // Año de fin de la serie
+    let rating: String // Calificación de la serie
+    let modified: String // Fecha de modificación de la serie
+    let thumbnail: Thumbnail // Miniatura de la serie
 }

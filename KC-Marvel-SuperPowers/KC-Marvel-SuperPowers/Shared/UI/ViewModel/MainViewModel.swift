@@ -10,7 +10,8 @@ import Combine
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    
+    // MARK: -Properties
+
     // Lista de personajes que se mostrarán en la aplicación
     @Published var characters: [Character] = []
     
@@ -64,7 +65,6 @@ class MainViewModel: ObservableObject {
                 }
                 self?.characters.append(contentsOf: data.data.results)
                 self?.offset += data.data.results.count
-                // Actualiza la lista de personajes con los datos recibidos del servidor
             }
             .store(in: &suscriptor) // Almacena el suscriptor para poder cancelarlo más tarde si es necesario
     }

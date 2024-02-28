@@ -92,7 +92,7 @@ final class BaseNetworkTests: XCTestCase {
 
 class MainRowViewTests: XCTestCase {
     func testMainRowView() {
-        let character = Character(id: 25, title: "The boss", name: "Goku", description: "Yes", thumbnail: Thumbnail(path: "https://play-lh.googleusercontent.com/proxy/M--NmuntpIS0tBP4ImXSXDDPKglGdc1FSFfK8WR_5DHnfhaTVMed5bmvmhXx4-ZtP0RVxbIW7s90Z6Wg1wiT3l_Ajno-UYX-cSqOFKcgCzI2aDNGRnzhGrc=s1920-w1920-h1080", thumbnailExtension: Thumbnail.jpg(rawValue: "jpg") ?? .jpg), resourceURI: "", modified: "")
+        let character = Character(id: 25, title: "The boss", name: "Goku", description: "Yes", thumbnail: Thumbnail(path: "https://play-lh.googleusercontent.com/proxy/M--NmuntpIS0tBP4ImXSXDDPKglGdc1FSFfK8WR_5DHnfhaTVMed5bmvmhXx4-ZtP0RVxbIW7s90Z6Wg1wiT3l_Ajno-UYX-cSqOFKcgCzI2aDNGRnzhGrc=s1920-w1920-h1080", thumbnailExtension: Thumbnail.Extension(rawValue: "jpg") ?? .jpg), resourceURI: "", modified: "")
         
         let mainRowView = MainRowView(character: character)
         
