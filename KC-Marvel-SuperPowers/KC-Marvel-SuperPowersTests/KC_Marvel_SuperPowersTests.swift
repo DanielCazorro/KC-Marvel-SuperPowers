@@ -92,7 +92,7 @@ final class BaseNetworkTests: XCTestCase {
 
 class MainRowViewTests: XCTestCase {
     func testMainRowView() {
-        let character = Character(id: 25, name: "Goku", description: "Yes", thumbnail: Thumbnail(path: "https://play-lh.googleusercontent.com/proxy/M--NmuntpIS0tBP4ImXSXDDPKglGdc1FSFfK8WR_5DHnfhaTVMed5bmvmhXx4-ZtP0RVxbIW7s90Z6Wg1wiT3l_Ajno-UYX-cSqOFKcgCzI2aDNGRnzhGrc=s1920-w1920-h1080", thumbnailExtension: Thumbnail.jpg(rawValue: "jpg") ?? .jpg), resourceURI: "", modified: "")
+        let character = Character(id: 25, title: "The boss", name: "Goku", description: "Yes", thumbnail: Thumbnail(path: "https://play-lh.googleusercontent.com/proxy/M--NmuntpIS0tBP4ImXSXDDPKglGdc1FSFfK8WR_5DHnfhaTVMed5bmvmhXx4-ZtP0RVxbIW7s90Z6Wg1wiT3l_Ajno-UYX-cSqOFKcgCzI2aDNGRnzhGrc=s1920-w1920-h1080", thumbnailExtension: Thumbnail.jpg(rawValue: "jpg") ?? .jpg), resourceURI: "", modified: "")
         
         let mainRowView = MainRowView(character: character)
         
@@ -168,5 +168,113 @@ final class MarvelCharactersTests: XCTestCase {
             }
         }
         
+    }
+    
+}
+
+// MARK: - SeriesViewModel Test
+
+class SeriesViewModelTests: XCTestCase {
+
+    var viewModel: SeriesViewModel!
+
+    override func setUp() {
+        super.setUp()
+        viewModel = SeriesViewModel(testing: true, idHero: 1)
+    }
+
+    override func tearDown() {
+        viewModel = nil
+        super.tearDown()
+    }
+
+    func testGetSeriesTest() {
+        // Given
+        let expectedSeriesCount = 3
+
+        // When
+        viewModel.getSeriesTest()
+
+        // Then
+        XCTAssertEqual(viewModel.series?.count, expectedSeriesCount)
+    }
+
+    func testGetSeries() {
+        // Given
+        let expectation = XCTestExpectation(description: "Series loaded successfully")
+
+        // When
+        viewModel.getSeries(idHero: 1)
+
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            XCTAssertNotNil(self.viewModel.series)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 10.0)
+    }
+}
+
+// MARK: - SeriesView Test
+
+class SeriesViewTests: XCTestCase {
+
+    func testSeriesView_WithSeriesLoaded() {
+        // Given
+        let seriesViewModel = SeriesViewModel(testing: true, idHero: 1)
+        let seriesView = SeriesView(seriesViewModel: seriesViewModel)
+
+        // When
+        let viewController = UIHostingController(rootView: seriesView)
+
+        // Then
+        XCTAssertNotNil(viewController.view)
+
+    }
+
+    func testSeriesView_WithNoSeriesLoaded() {
+        // Given
+        let seriesViewModel = SeriesViewModel(testing: true, idHero: 1)
+        let seriesView = SeriesView(seriesViewModel: seriesViewModel)
+
+        // When
+        let viewController = UIHostingController(rootView: seriesView)
+
+        // Then
+        XCTAssertNotNil(viewController.view)
+
+    }
+}
+
+// MARK: - SeriesRowView Test
+
+
+class SeriesRowViewTests: XCTestCase {
+
+    func testSeriesRowView_WithExpandedDescription() {
+        // Given
+        let serie = Series(id: 1, title: "Daniel", description: "The best description ever!", resourceURI: "", startYear: 5, endYear: 10, rating: "", modified: "", thumbnail: Thumbnail(path: "", thumbnailExtension: .jpg))
+        let seriesRowView = SeriesRowView(serie: serie)
+
+        // When
+        let viewController = UIHostingController(rootView: seriesRowView)
+
+        // Then
+        XCTAssertNotNil(viewController.view)
+
+    }
+
+    func testSeriesRowView_WithCollapsedDescription() {
+        // Given
+        let serie = Series(id: 1, title: "Daniel", description: "The best description ever!", resourceURI: "", startYear: 5, endYear: 10, rating: "", modified: "", thumbnail: Thumbnail(path: "", thumbnailExtension: .jpg))
+        let seriesRowView = SeriesRowView(serie: serie)
+
+        // When
+        let viewController = UIHostingController(rootView: seriesRowView)
+
+        // Then
+        XCTAssertNotNil(viewController.view)
+
     }
 }
