@@ -17,6 +17,11 @@ class MainViewModel: ObservableObject {
     // Conjunto de suscriptores para cancelar las solicitudes de red cuando sea necesario
     private var suscriptor = Set<AnyCancellable>()
     
+    private var offset = 0
+    private var limit = 20
+    private var isPossibleLoadMore = true
+    private var loading = false
+    
     // Inicializador del ViewModel
     init(testing: Bool = false) {
         if(testing) {
@@ -28,9 +33,14 @@ class MainViewModel: ObservableObject {
     
     /// Función para obtener la lista de personajes desde la API de Marvel
     func getCharacters() {
+        
+        guard isPossibleLoadMore && !loading else { return }
+        
+        loading = true
+        
         // Realiza una solicitud de red para obtener la lista de personajes
         URLSession.shared
-            .dataTaskPublisher(for: BaseNetwork().getSessionHero()) // Utiliza el método getSessionHero() de BaseNetwork para obtener la solicitud URLRequest
+            .dataTaskPublisher(for: BaseNetwork().getSessionHero(offset: offset, limit: limit)) // Utiliza el método getSessionHero() de BaseNetwork para obtener la solicitud URLRequest
             .tryMap {
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
@@ -40,10 +50,30 @@ class MainViewModel: ObservableObject {
             }
             .decode(type: CharacterDataWrapper.self, decoder: JSONDecoder()) // Decodifica los datos recibidos en objetos de tipo CharacterDataWrapper
             .receive(on: DispatchQueue.main) // Recibe los resultados en el hilo principal para actualizar la interfaz de usuario
-            .sink(receiveCompletion: { _ in }) { data in
-                self.characters = data.data.results // Actualiza la lista de personajes con los datos recibidos del servidor
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                self?.loading = false
+            }) { [weak self] data in
+                if data.data.results.count < self?.limit ?? 20 {
+                    self?.isPossibleLoadMore = false
+                }
+                self?.characters.append(contentsOf: data.data.results)
+                self?.offset += data.data.results.count
+                // Actualiza la lista de personajes con los datos recibidos del servidor
             }
             .store(in: &suscriptor) // Almacena el suscriptor para poder cancelarlo más tarde si es necesario
+    }
+    
+    func showMoreHeroes(currentHero hero: Character) {
+        let last = characters.last?.id == hero.id
+        if last && isPossibleLoadMore {
+            getCharacters()
+        }
     }
     
     /// Función para obtener datos de prueba de personajes

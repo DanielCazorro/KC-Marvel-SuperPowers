@@ -34,20 +34,25 @@ enum paramsKeys: String {
 
 struct BaseNetwork {
     /// Función para obtener una URL construida con el endpoint y un subpath opcional para las series
-    private func getURL(endpoint:String, subPath:String = "") -> String{
+    private func getURL(endpoint:String, subPath:String = "", offset: Int? = nil, limit: Int? = nil) -> String{
         var url = server
         
         url += "\(endpoint)\(subPath)"
         url += "?apikey=\(paramsKeys.publicKey.rawValue)"
         url += "&ts=\(paramsKeys.ts.rawValue)"
         url += "&hash=\(paramsKeys.hash.rawValue)"
+        
+        if let offset = offset, let limit = limit {
+            url += "&offset=\(offset)&limit=\(limit)"
+        }
+        
         return url
     }
     
     /// Función para obtener una solicitud de sesión para obtener la lista de héroes
-    func getSessionHero() -> URLRequest {
+    func getSessionHero(offset: Int = 0, limit: Int = 20) -> URLRequest {
         // Construimos la URL para obtener la lista de héroes, ordenada por fecha de modificación descendente
-        var urlStr: String = getURL(endpoint: endpoints.herosList.rawValue)
+        var urlStr: String = getURL(endpoint: endpoints.herosList.rawValue, offset: offset, limit: limit)
         urlStr += "&orderBy=-modified"
         
         // Creamos la solicitud URLRequest
