@@ -1,15 +1,21 @@
-# KC-Marvel-SuperPowers
+# KC Marvel SuperPowers
 
-## Descripción
+KC Marvel SuperPowers es una aplicación móvil desarrollada para dispositivos iOS que te permite explorar información sobre personajes y series del universo Marvel.
 
-KC Marvel SuperPowers es una aplicación móvil desarrollada en SwiftUI que permite explorar una lista de héroes del universo de Marvel. La aplicación consume datos de la API de Marvel para mostrar información detallada sobre los personajes, incluyendo imágenes, nombres y descripciones.
+## Características
 
-## Características Principales
+- **Explora personajes:** Descubre información detallada sobre los personajes icónicos de Marvel, incluyendo su descripción, imagen y más.
+- **Explora series:** Conoce las series de cómics asociadas a tus héroes favoritos de Marvel.
+- **Carga infinita:** La aplicación utiliza la carga infinita para cargar más personajes a medida que te desplazas por la lista.
+- **Interfaz intuitiva:** Diseñada con una interfaz de usuario intuitiva y fácil de usar para una experiencia fluida de navegación.
 
-- Lista de Héroes: Visualiza una lista de héroes del universo de Marvel.
-- Detalles del Héroe: Accede a información detallada sobre cada personaje, incluyendo imágenes y descripciones.
-- Búsqueda: Busca héroes específicos por nombre.
-- Testing y Cobertura: Se han realizado pruebas unitarias y la cobertura de código alcanza el 70%.
+## Capturas de pantalla
+
+<div style="display: flex; justify-content: space-between;">
+<img src="screenshots/screenshot1.png" width="150"style="margin-right: 10px;">
+<img src="screenshots/screenshot2.png" width="150"style="margin-right: 10px;">
+<img src="screenshots/screenshot3.png" width="150"style="margin-right: 10px;">
+</div>
 
 ## Tecnologías Utilizadas
 
@@ -18,23 +24,19 @@ Combine
 URLSession para manejar las solicitudes HTTP
 Codable para el manejo de datos JSON
 
+## Requisitos de instalación
+
+- Dispositivo con iOS 14.0 o superior.
+- Conexión a internet para cargar datos desde la API de Marvel.
+
 ## Instalación
 
-Clona este repositorio: git clone https://github.com/tu_usuario/KC-Marvel-SuperPowers.git
-Abre el proyecto en Xcode.
-Ejecuta la aplicación en un simulador o dispositivo iOS.
-Capturas de Pantalla
+1. Clona o descarga el repositorio en tu máquina local.
+2. Abre el proyecto en Xcode.
+3. Configura las credenciales de la API de Marvel en el archivo `BaseNetwork.swift`.
+4. Ejecuta la aplicación en un simulador o dispositivo iOS.
 
-Captura de pantalla 1
-Descripción de la captura de pantalla 1.
+## Créditos
 
-Captura de pantalla 2
-Descripción de la captura de pantalla 2.
-
-## Contribución
-
-Contribuciones son bienvenidas. Si quieres contribuir a este proyecto, por favor crea una rama (git checkout -b feature/nueva-funcionalidad) y realiza un pull request.
-
-## Autor
-
-Daniel Cazorro Frías (@DanielCazorro)
+- **Desarrollador:** Daniel Cazorro Frías
+- **API utilizada:** [Marvel Comics API](https://developer.marvel.com/docs)
